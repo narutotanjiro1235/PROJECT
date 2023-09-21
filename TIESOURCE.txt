@@ -1,0 +1,46 @@
+APP LAYOUT FOR SMART TELEVISION
+Source code
+<!-- res/layout/activity_tv_app.xml -->
+
+<androidx.leanback.widget.BrowseFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <!-- Top row for app title/logo -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <!-- Your app logo or title TextView -->
+        <ImageView
+            android:id="@+id/app_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_app_logo"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+    <!-- Main content area for TV rows -->
+    <androidx.leanback.widget.VerticalGridView
+        android:id="@+id/browse_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/app_logo"
+        android:layout_marginTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layoutManager="androidx.leanback.widget.GridLayoutManager"
+        app:numColumns="4"
+        app:orientation="horizontal" />
+
+</androidx.leanback.widget.BrowseFrameLayout>
